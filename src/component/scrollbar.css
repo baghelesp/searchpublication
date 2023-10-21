@@ -1,0 +1,26 @@
+.custom-scrollbar-container {
+    width:auto;
+    height: auto;
+    overflow: auto;
+  }
+  
+  .custom-scrollbar-content {
+   
+  }
+  
+  .custom-scrollbar-container::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  .custom-scrollbar-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  .custom-scrollbar-container::-webkit-scrollbar-thumb {
+    background: #d3d2d2;
+  }
+  
+  .custom-scrollbar-container::-webkit-scrollbar-thumb:hover {
+    background: #b4b4b4;
+  }
+  

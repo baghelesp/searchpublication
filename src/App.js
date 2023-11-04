@@ -13,10 +13,10 @@ function App() {
   return (
     // setting redux store
     <Provider store={store}>
-      <div className="App" style={{backgroundColor:'#E9F1FF', height:"100vh"}} >
+      <div  style={{backgroundColor:'#E9F1FF', height:"100vh"}} >
         {/* Setting Material Ui Theme */}
         <ThemeProvider theme={ColorTheme}>
-          <Container maxWidth="sm"   > 
+          <Container maxWidth="sm"  style={{padding:"0px"}}  > 
             <div style={{backgroundColor:'#ffffff'}} ><Home/></div>
           </Container>
         </ThemeProvider>

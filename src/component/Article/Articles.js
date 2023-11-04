@@ -11,7 +11,7 @@ export default function Articles(props){
     const abstract=props.content.abstract
     return(
         <>
-          <Card sx={{ width: 520 }}>
+          <Card sx={{ width: 570 }}>
             <CardContent>
               <div style={{display:"flex",alignItems:"center"}}>
                 {/* article url */}

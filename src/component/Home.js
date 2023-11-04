@@ -7,14 +7,9 @@ import Articles from "./Article/Articles";
 import { useSelector } from "react-redux";
 import './scrollbar.css'
 export default function Home(){
-    const loading= useSelector((state)=>state.load.value.isloading)
-    const error =useSelector((state)=>state.load.value.error)
+
     const result=useSelector((state)=>state.search.value.result)
     const academic=useSelector((state)=>state.search.value.type)
-    // const [content,setContent]=useState([]);
-    // const [academic, setAcademic]=useState(true);
-    // const [loading, setLoading] = useState(false);
-    // const [cerror, setError] = useState(null);
     console.log("length : "+result.length)
     console.log("content"+result)
     return(
@@ -40,7 +35,7 @@ export default function Home(){
                     return<div key={key} style={{display: 'flex',paddingright:"7px",paddingLeft:"7px",paddingTop:"10px",alignItems:"center",justifyContent:"center"}}>
                         <Articles content={cont}/>
                         </div>;
-                    }) : <div style={{display:"flex",padding:"20px", justifyContent:"center"}}><Button variant="contained" size="small">web search</Button></div>}
+                    }) : null}
             
                 </div>
             

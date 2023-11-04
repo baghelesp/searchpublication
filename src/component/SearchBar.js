@@ -4,6 +4,7 @@ import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import Switch from '@mui/material/Switch';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
+import { Button } from "@mui/material";
 
 import { useSelector } from 'react-redux';
 import {setAcademic,onSearch,cancleSearch} from './store/search'
@@ -16,6 +17,7 @@ export default function SearchBar(){
     const academic=useSelector((state)=>state.search.value.type)
     const load=useSelector((state)=>state.load.value.isloading)
     const result=useSelector((state)=>state.search.value.result)
+    
     const dispatch=useDispatch();
 
     const [searchKey, setSearchKey]=useState(null)
@@ -77,6 +79,7 @@ export default function SearchBar(){
                 <SearchOutlinedIcon onClick={()=>{apiCall(searchKey)}} style={{margin:"12px"}}/>
                 
                 <input type='text' 
+                placeholder='keywords...'
                 style={{
                     padding: '5px',
                     width:'60%',
@@ -87,6 +90,7 @@ export default function SearchBar(){
                 <div style={{display:"flex"}}>Academic<Switch size="small" checked={check} onChange={handleCheck} {...label}  /></div> 
                 
             </div>
+            {result.length?null:<div style={{display:"flex",padding:"20px", justifyContent:"center"}}><Button onClick={()=>{apiCall(searchKey)}}  variant="contained" size="small">web search</Button></div>}
             {load ?<Box sx={{ display: 'flex',marginTop:"25px", marginLeft:"45%" }}><CircularProgress /></Box>:null}
             {error?<div style={{display:"flex",margin: "10px", color:"red", justifyContent:"center", alignItems:"center"}}>{error}</div>:null}
         </div>
